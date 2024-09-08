@@ -136,9 +136,12 @@ fn get_gpu_image(app_state: &ApplicationState) -> String {
     let temp = gpu.temperature(nvml_wrapper::enum_wrappers::device::TemperatureSensor::Gpu).unwrap();
     let gpu_clock = gpu.clock_info(nvml_wrapper::enum_wrappers::device::Clock::Graphics).unwrap();
     let watts = gpu.power_usage().unwrap();
+    let mem_clock = gpu.clock_info(nvml_wrapper::enum_wrappers::device::Clock::Memory).unwrap();
+
     imageproc::drawing::draw_text_mut(&mut image, Rgb([100u8, 100u8, 255u8]), 10, 10, scale, &font, format!("Temp: {0}", temp).as_str());
     imageproc::drawing::draw_text_mut(&mut image, Rgb([100u8, 100u8, 255u8]), 10, 55, scale, &font, format!("Clock: {0}", gpu_clock).as_str());
     imageproc::drawing::draw_text_mut(&mut image, Rgb([100u8, 100u8, 255u8]), 10, 100, scale, &font, format!("Watts: {0}", (watts/1000) as u8).as_str());
+    imageproc::drawing::draw_text_mut(&mut image, Rgb([100u8, 100u8, 255u8]), 10, 145, scale, &font, format!("MClk: {0}", mem_clock).as_str());
     
 
 
