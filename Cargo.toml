@@ -1,0 +1,20 @@
+[package]
+name = "streamdeck-rust"
+version = "0.1.10"
+edition = "2021"
+authors = ["Trevor Sullivan <trevor@trevorsullivan.net>"]
+description = "Stream Deck plugin using Rust 🦀"
+license = "MIT"
+homepage = "https://github.com/pcgeek86/"
+
+[dependencies]
+ab_glyph = "0.2.28"
+base64 = "0.22.1"
+futures = "0.3.30"
+imageproc = "0.25.0"
+nvml-wrapper = "0.10.0"
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+tokio = { version = "1.40.0", features = ["full"] }
+tokio-tungstenite = "0.23.1"
+uuid = { version = "1.10.0", features = ["v4"] }
