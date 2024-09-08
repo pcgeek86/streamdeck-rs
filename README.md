@@ -19,5 +19,11 @@ cargo build; Copy-Item .\target\debug\streamdeck-rust.exe .
 # Icons
 
 Currently this project supports a single custom icon in the plugin called "NVIDIA GPU Info."
+This icon displays:
+
+- GPU Temperature
+- GPU Core Clock Speed
+- GPU Memory Clock Speed
+- GPU Watts Consumed
 
 ![screenshot](./assets/github/nvidia-gpu-info.png)
